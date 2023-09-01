@@ -1,0 +1,49 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  padding: 0.8rem 1rem;
+
+  @include tablet {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  @include desktop {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    color: $black;
+  }
+
+  &__heart {
+    color: $green;
+  }
+
+  &__navbar {
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+  }
+
+  &__listitem {
+    margin-left: 1rem;
+    font-weight: 500;
+    color: $black;
+  }
+
+  &__menubtn {
+    display: none;
+    color: $green;
+  }
+}
