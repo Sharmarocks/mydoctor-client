@@ -14,6 +14,8 @@
 
   &__img {
     content: url("../../assets/image/home-img.svg");
+    min-width: 100%;
+    height: 80vh;
   }
 
   &__intro {

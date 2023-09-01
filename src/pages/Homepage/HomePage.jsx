@@ -20,7 +20,7 @@ function HomePage() {
               Guaranteeing Health Care
               <br /> To All Of Our People As A Right
             </p>
-            <Link to="" className="main__btn">
+            <Link to="/doctors" className="main__btn">
               Find Doctors <FaChevronRight className="main__arrow" />
             </Link>
           </div>
