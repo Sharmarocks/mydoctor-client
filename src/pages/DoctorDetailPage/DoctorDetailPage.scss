@@ -1,0 +1,9 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.doctors {
+  &__detailarrow {
+    color: $blue;
+    font-size: 2.5rem;
+  }
+}
