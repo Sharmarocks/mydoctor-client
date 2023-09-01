@@ -2,7 +2,8 @@ import Header from "../../components/Header/Header";
 import { Link } from "react-router-dom";
 import "./Homepage.scss";
 
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronRight, FaUserMd, FaUsers, FaHospital } from "react-icons/fa";
+import AboutUs from "../../components/AboutUs/AboutUs";
 
 function HomePage() {
   return (
@@ -27,12 +28,26 @@ function HomePage() {
       </section>
 
       <section>
-        <div className="info-cards">
-          <div className="info__doc"></div>
-          <div className="info__patients"></div>
-          <div className="info__hospital"></div>
+        <div className="info">
+          <div className="info__doc">
+            <FaUserMd className="info__icon" />
+            <p className="info__number">30+</p>
+            <p className="info__subheading">Doctors At Work</p>
+          </div>
+          <div className="info__patients">
+            <FaUsers className="info__icon" />
+            <p className="info__number">50+</p>
+            <p className="info__subheading">Satisfied Patients</p>
+          </div>
+          <div className="info__clinics">
+            <FaHospital className="info__icon" />
+            <p className="info__number">10+</p>
+            <p className="info__subheading">Available Clinics</p>
+          </div>
         </div>
       </section>
+
+      <AboutUs />
     </>
   );
 }

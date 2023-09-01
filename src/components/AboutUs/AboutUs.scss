@@ -1,0 +1,34 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.aboutus {
+  &__heading {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $black;
+    letter-spacing: 0.4rem;
+    text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.2);
+  }
+  &__image {
+    content: url("../../assets/image/about-img.svg");
+  }
+
+  &__desc {
+    padding: 0 1.5rem;
+  }
+
+  &__subheading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $black;
+    text-shadow: 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.2);
+  }
+
+  &__para {
+    color: $silver;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 2;
+  }
+}

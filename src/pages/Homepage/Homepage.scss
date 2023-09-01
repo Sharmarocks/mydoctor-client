@@ -36,6 +36,7 @@
     display: inline-block;
     text-decoration: none;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     padding: 0.5rem;
     padding-left: 1rem;
     border: 1px solid $green;
@@ -45,5 +46,39 @@
     cursor: pointer;
     font-size: 1.7rem;
     background: $white;
+  }
+}
+
+.info {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem 1.5rem;
+  justify-content: space-evenly;
+
+  &__doc,
+  &__patients,
+  &__clinics {
+    border: 0.1rem solid $green;
+    box-shadow: 0.3rem 0.3rem 0 rgba(22, 160, 133, 0.2);
+    border-radius: 0.5rem;
+    text-align: center;
+    padding: 2rem 3rem;
+  }
+
+  &__icon {
+    color: $green;
+    font-size: 3rem;
+  }
+
+  &__number {
+    font-size: 2rem;
+    color: $black;
+    margin: 0.5rem 0;
+    text-shadow: var(--text-shadow);
+  }
+
+  &__subheading {
+    font-size: 1rem;
+    color: $silver;
   }
 }
