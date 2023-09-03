@@ -1,5 +1,6 @@
 import "./Header.scss";
 import { FaHeartbeat, FaBars } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -12,13 +13,20 @@ function Header() {
 
         <div className="header__navbar">
           <ul className="header__list">
-            <li className="header__listitem">Home</li>
+            <Link to={"/"}>
+              <li className="header__listitem">Home</li>
+            </Link>
             <li className="header__listitem">Services</li>
             <li className="header__listitem">About</li>
             <li className="header__listitem">Doctors</li>
-            <li className="header__listitem">Review</li>
+
+            <Link to={"/myappointments"}>
+              <li className="header__listitem">MyAppointments</li>
+            </Link>
             <li className="header__listitem">Blogs</li>
-            <li className="header__listitem">Login/SignUp</li>
+            <Link to={"/users"}>
+              <li className="header__listitem">Login/SignUp</li>
+            </Link>
           </ul>
         </div>
 
