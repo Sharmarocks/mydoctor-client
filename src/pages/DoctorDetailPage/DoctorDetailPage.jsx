@@ -7,11 +7,12 @@ import Header from "../../components/Header/Header";
 
 function DoctorDetailPage() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [doctorDetail, setdoctorDetail] = useState(null);
 
   const [userDetails, setUserDetails] = useState(null);
 
-  const [formData, setFormData] = useState(null);
+  const [formData, setFormData] = useState({ date: "", time: "" });
 
   useEffect(() => {
     if (id) {
@@ -27,6 +28,53 @@ function DoctorDetailPage() {
         });
     }
   }, [id]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5050/api/users`)
+      .then((response) => {
+        console.log(response.data);
+        setUserDetails(response.data);
+      })
+      .catch((error) => {
+        console.error(`Error fetching details ${error}`);
+      });
+  }, []);
+
+  const handleBooking = (e) => {
+    e.preventDefault(); // Prevent the form from submitting by default
+
+    try {
+      // Make an API request to create a new booking
+      const bookingData = {
+        doctorId: id,
+        userId: userDetails.id, // Assuming your user details contain an "id" field
+        user_name: `${userDetails.firstname} ${userDetails.lastname}`,
+        user_email: userDetails.email,
+        doctor_name: doctorDetail.name,
+        booking_datetime: `${formData.date} ${formData.time}`,
+      };
+
+      axios
+        .post(`http://localhost:5050/api/bookings`, bookingData)
+        .then((response) => {
+          if (response.status === 200) {
+            // Update the formData state if needed
+            setFormData({ date: "", time: "" });
+
+            // Redirect to the appointments page after successful booking
+            navigate("/myappointments");
+          } else {
+            console.log("Booking failed");
+          }
+        })
+        .catch((error) => {
+          console.error("Booking error:", error);
+        });
+    } catch (error) {
+      console.error("Booking error:", error);
+    }
+  };
 
   if (!doctorDetail) {
     return <div>Loading...</div>;
@@ -51,9 +99,9 @@ function DoctorDetailPage() {
         </div>
       </div>
 
-      <form className="bookingform">
+      <form className="bookingform" onSubmit={handleBooking}>
         <p className="bookingform__heading">Book Now!!</p>
-        <label htmlFor="fname">FirstName:</label>
+        {/* <label htmlFor="fname">FirstName:</label>
         <input
           type="text"
           id="fname"
@@ -88,7 +136,7 @@ function DoctorDetailPage() {
           name="phone"
           className="bookingform__phone"
           required
-        />{" "}
+        />{" "} */}
         <br />
         <br />
         <label htmlFor="date">Appointment Date:</label>
@@ -98,6 +146,8 @@ function DoctorDetailPage() {
           name="date"
           className="bookingform__date"
           required
+          onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+          value={formData.date}
         />
         <br />
         <label htmlFor="time">Appointment Time:</label>
@@ -106,10 +156,12 @@ function DoctorDetailPage() {
           id="time"
           name="time"
           className="bookingform_time"
+          onChange={(e) => setFormData({ ...formData, time: e.target.value })}
+          value={formData.time}
           required
         />
         <br></br>
-        <button type="button">BookNow!!</button>
+        <button type="submit">BookNow!!</button>
       </form>
     </section>
   );
