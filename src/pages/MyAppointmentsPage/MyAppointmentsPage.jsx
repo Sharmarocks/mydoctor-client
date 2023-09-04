@@ -4,13 +4,17 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function MyAppointmentsPage() {
-  const [appointmentList, setappointmentList] = useState(null);
+  const [appointmentList, setappointmentList] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5050/api/bookings`)
+      .get("http://localhost:5050/api/bookings")
       .then((response) => {
-        setappointmentList(response.data);
+        if (Array.isArray(response.data)) {
+          setappointmentList(response.data);
+        } else {
+          setappointmentList([]); // Set it to an empty array or handle this case as needed
+        }
       })
       .catch((error) => {
         console.error(`Error retreiving booking ${error}`);
@@ -25,7 +29,7 @@ function MyAppointmentsPage() {
       <div className="appointments">
         <ul className="appointments__list">
           {appointmentList.map((item) => (
-            <li key={item.id} className="appointments__listitem">
+            <li key={item.booking_id} className="appointments__listitem">
               <p className="appointments__bookingid">{item.id}</p>
               <p className="appointments__name">{item.user_name}</p>
               <p className="appointments__useremail">{item.user_email}</p>
