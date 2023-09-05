@@ -7,7 +7,12 @@
   justify-content: space-between;
   background-color: $white;
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
-  padding: 0.8rem 1rem;
+  padding: 0rem 1rem;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 
   @include tablet {
     padding-left: 1rem;
@@ -19,21 +24,58 @@
   }
 
   &__logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+
+  &__logotext {
     font-size: 1.5rem;
     color: $black;
+    font-weight: 500;
   }
 
   &__heart {
     color: $green;
+    align-items: center;
+    margin-right: 0.5rem;
   }
 
   &__navbar {
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+    }
+
+    @include desktop {
+    }
   }
 
   &__list {
     display: flex;
     list-style: none;
     align-items: center;
+
+    @include tablet {
+    }
+    @include desktop {
+    }
+  }
+
+  &__list--active {
+    transform: scale(1);
+    opacity: 1;
+    transform: 0.2s ease out;
+
+    @include tablet {
+    }
+    @include desktop {
+    }
+  }
+
+  &__link {
+    text-decoration: none;
   }
 
   &__listitem {
@@ -43,7 +85,20 @@
   }
 
   &__menubtn {
-    display: none;
     color: $green;
+    font-size: 1.5rem;
+    background-color: #e1e1e1;
+    border-radius: 4px;
+    padding: 4px 5px;
+    cursor: pointer;
+    display: none;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: none;
+    }
   }
 }

@@ -3,6 +3,7 @@ import DoctorsListPage from "./pages/DoctorsListPage/DoctorsListPage";
 import DoctorDetailPage from "./pages/DoctorDetailPage/DoctorDetailPage";
 
 import LoginPage from "./pages/LoginPage/LoginPage";
+import "./App.scss";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MyAppointmentsPage from "./pages/MyAppointmentsPage/MyAppointmentsPage";

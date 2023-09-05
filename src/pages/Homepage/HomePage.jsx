@@ -4,13 +4,15 @@ import "./Homepage.scss";
 
 import { FaChevronRight, FaUserMd, FaUsers, FaHospital } from "react-icons/fa";
 import AboutUs from "../../components/AboutUs/AboutUs";
+import Blogs from "../../components/Blogs/Blogs";
+import Footer from "../../components/Footer/Footer";
 
 function HomePage() {
   return (
     <>
       <Header />
 
-      <section className="page1">
+      <section id="page1">
         <div className="main">
           <img className="main__img" />
           <div className="main__intro">
@@ -48,6 +50,9 @@ function HomePage() {
       </section>
 
       <AboutUs />
+      <Blogs />
+
+      <Footer />
     </>
   );
 }

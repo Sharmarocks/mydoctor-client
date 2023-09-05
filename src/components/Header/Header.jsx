@@ -8,23 +8,26 @@ function Header() {
       <div className="header">
         <div className="header__logo">
           <FaHeartbeat className="header__heart" />
-          MyDoctor
+          <Link to={"/"} className="header__link">
+            <p className="header__logotext">MyDoctor</p>
+          </Link>
         </div>
 
-        <div className="header__navbar">
-          <ul className="header__list">
-            <Link to={"/"}>
+        <div className="header__navbar ">
+          <ul className="header__list  header__list--active">
+            <Link to={"/"} className="header__link">
               <li className="header__listitem">Home</li>
             </Link>
-            <li className="header__listitem">Services</li>
+
             <li className="header__listitem">About</li>
+            <li className="header__listitem">Blogs</li>
             <li className="header__listitem">Doctors</li>
 
-            <Link to={"/myappointments"}>
+            <Link to={"/myappointments"} className="header__link">
               <li className="header__listitem">MyAppointments</li>
             </Link>
-            <li className="header__listitem">Blogs</li>
-            <Link to={"/users"}>
+
+            <Link to={"/users"} className="header__link">
               <li className="header__listitem">Login/SignUp</li>
             </Link>
           </ul>

@@ -2,16 +2,16 @@ import "./AboutUs.scss";
 
 function AboutUs() {
   return (
-    <section>
+    <section id="page2">
+      <p className="aboutus__heading">ABOUT US</p>
       <div className="aboutus">
-        <p className="aboutus__heading">ABOUT US</p>
         <img className="aboutus__image" />
 
         <div className="aboutus__desc">
           <p className="aboutus__subheading">
             We Take Care Of Your Healthy Life
           </p>
-          <p className="aboutus_para">
+          <p className="aboutus__para">
             A Concept Known As "Health Buddy" Enables Users To Find Doctors In
             Their Area For Medical Difficulties. Users Would Gain Advantages
             Like Knowledge About Various Medical Practitioners And Clinics..

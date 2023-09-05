@@ -1,0 +1,49 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem 24px;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  &__subheader {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $black;
+  }
+
+  &__quicklinks {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $green;
+    margin-bottom: 5px;
+  }
+
+  &__lists {
+    padding-left: 0;
+  }
+
+  &__listitem {
+    color: $green;
+    list-style: none;
+    margin-bottom: 6px;
+  }
+
+  &__copyright {
+    color: $silver;
+    font-size: 1.5rem;
+    text-align: center;
+    border-top: 1px solid $silver;
+    margin: 0 24px;
+    padding: 1rem 0;
+  }
+}
