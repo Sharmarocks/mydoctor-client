@@ -1,5 +1,7 @@
 import "./DoctorsListPage.scss";
 import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import { FaStar } from "react-icons/fa";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { FaArrowAltCircleRight, FaArrowCircleRight } from "react-icons/fa";
@@ -31,17 +33,27 @@ function DoctorsListPage() {
                 className="doctors__image"
                 src={`http://localhost:5050${item.image}`}
               />
-              <p className="doctors__name">{item.name}</p>
-              <p className="doctors__speciality">{item.specialization}</p>
+              <div className="doctors__detail">
+                <div>
+                  <p className="doctors__name">{item.name}</p>
+                  <p className="doctors__speciality">{item.specialization}</p>
+                </div>
 
-              <p className="doctors__rating">{item.rating}</p>
-              <Link to={`/doctors/${item.id}`}>
-                <FaArrowCircleRight className="doctors__detailarrow" />
-              </Link>
+                <div>
+                  <p className="doctors__rating">
+                    <FaStar className="doctors__star" />
+                    {item.rating}
+                  </p>
+                  <Link to={`/doctors/${item.id}`}>
+                    <FaArrowCircleRight className="doctors__detailarrow" />
+                  </Link>
+                </div>
+              </div>
             </li>
           ))}
         </ul>
       </div>
+      <Footer />
     </section>
   );
 }

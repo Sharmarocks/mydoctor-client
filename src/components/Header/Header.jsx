@@ -18,10 +18,15 @@ function Header() {
             <Link to={"/"} className="header__link">
               <li className="header__listitem">Home</li>
             </Link>
-
-            <li className="header__listitem">About</li>
-            <li className="header__listitem">Blogs</li>
-            <li className="header__listitem">Doctors</li>
+            <a href="#page2">
+              <li className="header__listitem">About</li>
+            </a>
+            <a href="#page3">
+              <li className="header__listitem">Blogs</li>
+            </a>
+            <Link to="/doctors">
+              <li className="header__listitem">Doctors</li>
+            </Link>
 
             <Link to={"/myappointments"} className="header__link">
               <li className="header__listitem">MyAppointments</li>

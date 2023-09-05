@@ -4,6 +4,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
+import { FaStar } from "react-icons/fa";
+import Footer from "../../components/Footer/Footer";
 
 function DoctorDetailPage() {
   const { id } = useParams();
@@ -100,7 +102,10 @@ function DoctorDetailPage() {
             {doctorDetail.specialization}
           </p>
           <p className="doctordetail__address">{doctorDetail.address}</p>
-          <p className="doctordetail__rating">{doctorDetail.rating}</p>
+          <p className="doctordetail__rating">
+            <FaStar className="doctordetail__star" />
+            {doctorDetail.rating}
+          </p>
           <p className="doctordetail__bio">{doctorDetail.bio}</p>
         </div>
       </div>
@@ -110,7 +115,11 @@ function DoctorDetailPage() {
 
         <br />
         <br />
-        <label htmlFor="date">Appointment Date:</label>
+        <label htmlFor="date" className="bookingform__applabel">
+          Appointment Date
+        </label>
+        <br />
+        <br />
         <input
           type="date"
           id="date"
@@ -121,19 +130,26 @@ function DoctorDetailPage() {
           value={formData.date}
         />
         <br />
-        <label htmlFor="time">Appointment Time:</label>
+        <label htmlFor="time" className="bookingform__timelabel">
+          Appointment Time
+        </label>
+        <br />
+        <br />
         <input
           type="time"
           id="time"
           name="time"
-          className="bookingform_time"
+          className="bookingform__time"
           onChange={(e) => setFormData({ ...formData, time: e.target.value })}
           value={formData.time}
           required
         />
         <br></br>
-        <button type="submit">BookNow!!</button>
+        <button type="submit" className="bookingform__btn">
+          BookNow!!
+        </button>
       </form>
+      <Footer />
     </section>
   );
 }

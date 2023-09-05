@@ -1,0 +1,67 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.doctors {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+
+  &__list {
+    list-style: none;
+
+    @include tablet {
+      width: auto;
+      display: flex;
+      flex-wrap: wrap;
+
+      gap: 10px;
+    }
+    @include desktop {
+      padding: 2rem 1.5rem;
+    }
+  }
+
+  &__listitem {
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    width: fit-content;
+    padding: 5px;
+  }
+
+  &__detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.8rem;
+
+    @include tablet {
+    }
+  }
+
+  &__image {
+    border-radius: 10px;
+  }
+
+  &__name {
+    font-weight: 500;
+  }
+
+  &__speciality {
+    background-color: rgba(0, 128, 0, 0.3);
+    width: fit-content;
+    padding: 4px;
+    border-radius: 4px;
+  }
+
+  &__rating {
+    font-weight: 500;
+  }
+
+  &__star {
+    color: $gold;
+  }
+
+  &__detailarrow {
+    color: $blue;
+    font-size: 2.5rem;
+  }
+}
