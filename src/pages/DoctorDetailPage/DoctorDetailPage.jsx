@@ -26,7 +26,6 @@ function DoctorDetailPage() {
         })
         .catch((error) => {
           console.error(`Error fetching data ${error}`);
-          //   setdoctorDetail(null);
         });
     }
   }, [id]);
@@ -47,7 +46,7 @@ function DoctorDetailPage() {
     e.preventDefault();
 
     if (!formData.date || !formData.time) {
-      console.error("Date and time are required"); // Handle this case as needed
+      console.error("Date and time are required");
       return;
     }
 
@@ -57,8 +56,6 @@ function DoctorDetailPage() {
       user_email: userDetails.email,
       doctor_id: doctorDetail.id,
       doctor_name: doctorDetail.name,
-      // booking_datetime: `${formData.date} ${formData.time}`,
-      // booking_datetime: new Date(`${formData.date}T${formData.time}:00Z`),
 
       date: formData.date,
       time: formData.time,
@@ -146,7 +143,7 @@ function DoctorDetailPage() {
         />
         <br></br>
         <button type="submit" className="bookingform__btn">
-          BookNow!!
+          Submit
         </button>
       </form>
       <Footer />

@@ -12,8 +12,8 @@
       width: auto;
       display: flex;
       flex-wrap: wrap;
-
-      gap: 10px;
+      justify-content: center;
+      gap: 30px;
     }
     @include desktop {
       padding: 2rem 1.5rem;
@@ -23,6 +23,7 @@
   &__listitem {
     border-radius: 10px;
     margin-bottom: 2rem;
+
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     width: fit-content;
     padding: 5px;

@@ -1,0 +1,67 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.page6 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include tablet {
+  }
+
+  @include desktop {
+  }
+}
+
+.login {
+  line-height: 1.5;
+
+  box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.2);
+  padding-left: 5rem;
+  padding-right: 5rem;
+  padding-bottom: 2rem;
+  margin-top: 8rem;
+  @include tablet {
+  }
+  @include desktop {
+  }
+
+  &__heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #323232;
+    line-height: 1.8;
+    text-shadow: 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+
+  &__image {
+    content: url("../../assets/image/Doc.png");
+  }
+
+  &__userlabel,
+  &__passwordlabel {
+    font-size: 0.8rem;
+    color: $silver;
+  }
+
+  &__name,
+  &__password {
+    border: 2px solid $green;
+    color: $green;
+
+    border-radius: 15px;
+    height: 1.5rem;
+  }
+
+  &__btn {
+    margin-top: 1rem;
+
+    text-align: center;
+    border: none;
+    background-color: rgba(0, 128, 0, 0.3);
+    padding: 0.4rem 4.2rem;
+    border-radius: 15px;
+    color: $black;
+  }
+}

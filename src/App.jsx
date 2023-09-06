@@ -1,6 +1,7 @@
 import HomePage from "./pages/Homepage/HomePage";
 import DoctorsListPage from "./pages/DoctorsListPage/DoctorsListPage";
 import DoctorDetailPage from "./pages/DoctorDetailPage/DoctorDetailPage";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 import LoginPage from "./pages/LoginPage/LoginPage";
 import "./App.scss";
@@ -18,6 +19,8 @@ function App() {
           <Route path="/doctors/:id" element={<DoctorDetailPage />} />
           <Route path="/myappointments" element={<MyAppointmentsPage />} />
           <Route path="/users" element={<LoginPage />} />
+          <Route path="/notfound" element={<NotFoundPage />} status={404} />
+          <Route path="*" element={<NotFoundPage />} status={404} />
         </Routes>
       </div>
     </BrowserRouter>

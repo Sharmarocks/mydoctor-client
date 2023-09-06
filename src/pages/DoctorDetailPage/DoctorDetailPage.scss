@@ -55,7 +55,7 @@
   }
   &__date,
   &__time {
-    border: 1px solid $green;
+    border: 2px solid $green;
     border-radius: 10px;
     height: 2rem;
     width: 13rem;
@@ -69,7 +69,7 @@
     border: none;
     border-radius: 10px;
     background-color: rgba(0, 128, 0, 0.3);
-    padding: 0.5rem 4rem;
-    margin-top: 1rem;
+    padding: 0.5rem 5.4rem;
+    margin-top: 1.2rem;
   }
 }

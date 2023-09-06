@@ -14,7 +14,6 @@ function LoginPage() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
-    // Fetch the user data from the /api/users endpoint
     axios
       .get("http://localhost:5050/api/users")
       .then((response) => {
@@ -26,8 +25,10 @@ function LoginPage() {
         if (user && user.password === password) {
           // Redirect to the homepage after successful login
           console.log("Login Sucessful");
-
-          navigate("/");
+          toast("Success");
+          setTimeout(() => {
+            navigate("/");
+          }, 2000);
         } else {
           console.log("Login failed");
           toast("Login failed");
@@ -39,30 +40,39 @@ function LoginPage() {
   };
 
   return (
-    <div>
+    <section className="page6">
       <Header />
-      <h2>Login</h2>
-      <form onSubmit={handleFormSubmit}>
+
+      <form onSubmit={handleFormSubmit} className="login">
+        <h2 className="login__heading">Login</h2>
+        <img className="login__image" />
+
         <div>
-          <label>Username:</label>
+          <label className="login__userlabel">Username:</label>
+          <br />
           <input
             type="text"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            className="login__name"
             required
           />
         </div>
         <div>
-          <label>Password:</label>
+          <label className="login__passwordlabel">Password:</label>
+          <br />
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
+            className="login__password"
             required
           />
         </div>
         <div>
-          <button type="submit">Login</button>
+          <button type="submit" className="login__btn">
+            Login
+          </button>
         </div>
       </form>
       <ToastContainer
@@ -77,7 +87,7 @@ function LoginPage() {
         pauseOnHover
         theme="light"
       />
-    </div>
+    </section>
   );
 }
 export default LoginPage;
