@@ -15,7 +15,6 @@ function DoctorsListPage() {
       .get("http://localhost:5050/api/doctors")
       .then((response) => {
         setdoctorsList(response.data);
-        console.log(response.data);
       })
       .catch((err) => {
         console.log(`Error fetch doctors data ${err}`);

@@ -47,15 +47,15 @@ function Footer() {
           <p className="footer__subheader">Contact Info</p>
           <ul className="footer__lists">
             <li className="footer__listitem">
-              <FaPhone />
+              <FaPhone className="footer__icon" />
               888-888-8888
             </li>
             <li className="footer__listitem">
-              <FaEnvelope />
+              <FaEnvelope className="footer__icon" />
               rahulsharma199724@gmail.com
             </li>
             <li className="footer__listitem">
-              <FaMapMarkedAlt />
+              <FaMapMarkedAlt className="footer__icon" />
               Vancouver
             </li>
           </ul>
@@ -65,15 +65,15 @@ function Footer() {
           <p className="footer__subheader">Follow Us</p>
           <ul className="footer__lists">
             <li className="footer__listitem">
-              <FaFacebook />
+              <FaFacebook className="footer__icon" />
               Facebook
             </li>
             <li className="footer__listitem">
-              <FaTwitter />
+              <FaTwitter className="footer__icon" />
               Twitter
             </li>
             <li className="footer__listitem">
-              <FaInstagram />
+              <FaInstagram className="footer__icon" />
               Instagram
             </li>
           </ul>

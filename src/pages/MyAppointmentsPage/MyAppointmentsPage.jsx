@@ -22,7 +22,25 @@ function MyAppointmentsPage() {
       });
   }, []);
 
-  console.log(appointmentList);
+  const handleDeleteAppointment = (id) => {
+    axios
+      .delete(`http://localhost:5050/api/bookings/${id}`)
+
+      .then((response) => {
+        if (response.status === 204) {
+          setappointmentList((prevAppointments) =>
+            prevAppointments.filter(
+              (appointment) => appointment.booking_id !== id
+            )
+          );
+        } else {
+          console.error("Failed to delete appointment");
+        }
+      })
+      .catch((error) => {
+        console.error("Error deleting appointment", error);
+      });
+  };
 
   return (
     <section>
@@ -34,7 +52,7 @@ function MyAppointmentsPage() {
         <ul className="appointments__list">
           {appointmentList.map((item) => (
             <li key={item.booking_id} className="appointments__listitem">
-              <p className="appointments__bookingid">{item.id}</p>
+              <p className="appointments__bookingid">{item.booking_id}</p>
               <p className="appointments__name">{item.user_name}</p>
               <p className="appointments__useremail">{item.user_email}</p>
               <p className="appointments__rating">{item.doctor_name}</p>
@@ -45,6 +63,13 @@ function MyAppointmentsPage() {
                 {new Date(item.booking_datetime).getMinutes()}:
                 {new Date(item.booking_datetime).getSeconds()}
               </p>
+
+              <button
+                onClick={() => handleDeleteAppointment(item.booking_id)}
+                className="appointments__cancel"
+              >
+                CANCEL
+              </button>
             </li>
           ))}
         </ul>
