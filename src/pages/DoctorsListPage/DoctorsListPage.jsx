@@ -12,7 +12,7 @@ function DoctorsListPage() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5050/api/doctors")
+      .get(`http://localhost:8080/api/doctors`)
       .then((response) => {
         setdoctorsList(response.data);
       })
@@ -30,7 +30,7 @@ function DoctorsListPage() {
             <li key={item.id} className="doctors__listitem">
               <img
                 className="doctors__image"
-                src={`http://localhost:5050${item.image}`}
+                src={`http://localhost:8080${item.image}`}
               />
               <div className="doctors__detail">
                 <div>

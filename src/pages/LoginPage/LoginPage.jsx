@@ -15,7 +15,7 @@ function LoginPage() {
     e.preventDefault();
 
     axios
-      .get("http://localhost:5050/api/users")
+      .get(`http://localhost:8080/api/users`)
       .then((response) => {
         const userData = response.data;
 

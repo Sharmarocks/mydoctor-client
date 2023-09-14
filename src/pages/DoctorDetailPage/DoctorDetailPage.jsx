@@ -19,7 +19,7 @@ function DoctorDetailPage() {
   useEffect(() => {
     if (id) {
       axios
-        .get(`http://localhost:5050/api/doctors/${id}`)
+        .get(`http://localhost:8080/api/doctors/${id}`)
         .then((response) => {
           //   console.log(response.data);
           setdoctorDetail(response.data);
@@ -32,7 +32,7 @@ function DoctorDetailPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5050/api/users`)
+      .get(`http://localhost:8080/api/users`)
       .then((response) => {
         console.log(response.data);
         setUserDetails(response.data[0]);
@@ -65,7 +65,7 @@ function DoctorDetailPage() {
     console.log(formData);
 
     axios
-      .post(`http://localhost:5050/api/bookings`, bookingData)
+      .post(`http://localhost:8080/api/bookings`, bookingData)
       .then((response) => {
         console.log("Booking Response:", response.data);
         if (response.status === 201) {
@@ -91,7 +91,7 @@ function DoctorDetailPage() {
       <div className="doctordetail">
         <img
           className="doctordetail__img"
-          src={`http://localhost:5050${doctorDetail.image}`}
+          src={`http://localhost:8080${doctorDetail.image}`}
         />
         <div className="doctordetail__info">
           <p className="doctordetail__name">{doctorDetail.name}</p>
