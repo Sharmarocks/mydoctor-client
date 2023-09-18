@@ -15,7 +15,7 @@ function LoginPage() {
     e.preventDefault();
 
     axios
-      .get(`http://localhost:8080/api/users`)
+      .get(`https://mydoctorapi.onrender.com/api/users`)
       .then((response) => {
         const userData = response.data;
 

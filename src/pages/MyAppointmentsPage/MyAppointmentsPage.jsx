@@ -9,7 +9,7 @@ function MyAppointmentsPage() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/bookings`)
+      .get(`https://mydoctorapi.onrender.com/api/bookings`)
       .then((response) => {
         if (Array.isArray(response.data)) {
           setappointmentList(response.data);
@@ -24,7 +24,7 @@ function MyAppointmentsPage() {
 
   const handleDeleteAppointment = (id) => {
     axios
-      .delete(`http://localhost:8080/api/bookings/${id}`)
+      .delete(`https://mydoctorapi.onrender.com/api/bookings/${id}`)
 
       .then((response) => {
         if (response.status === 204) {
