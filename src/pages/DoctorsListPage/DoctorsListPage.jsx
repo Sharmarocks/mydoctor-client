@@ -25,6 +25,12 @@ function DoctorsListPage() {
     <section>
       <Header />
       <div className="doctors">
+        <div className="doctors__add">
+          <p className="doctors__addheadline">
+            Are you a doctor! Come <Link to={"/adddoctor"}>join us</Link>{" "}
+          </p>
+        </div>
+
         <ul className="doctors__list">
           {doctorsList.map((item) => (
             <li key={item.id} className="doctors__listitem">
